@@ -276,6 +276,20 @@ bigWig files can be created from any BED-like file containing ``chrom``, ``start
 The ``bedGraphToBigWig`` utility can be installed be either downloading the binary from
 the `UCSC genome browser <http://hgdownload.soe.ucsc.edu/admin/exe/>`_ or using `conda <https://anaconda.org/bioconda/ucsc-bedgraphtobigwig>`_. Note that the example above is only an example. Other input files may have more header lines or a different format.
 
+FASTA files
+-----------
+
+FASTA files encode genomic sequences in plaintext. They include headers that encode the
+names of each sequence in the file. They are typically indexed with a ``.fai`` FASTA
+index file.
+
+To import a FASTA sequence into the higlass server, use the vector datatype and fasta
+filetype. If you have an index file, also specify ``--indexfile myfile.fa.fai``.
+
+.. code-block:: bash
+
+    higlass-manage ingest mm10.fa --indexfile mm10.fa.fai
+
 Chromosome Sizes
 ----------------
 
